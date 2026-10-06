@@ -1,0 +1,95 @@
+# =============================================================================
+# IPL Match & Score Prediction Model — .gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 1. Virtual Environments
+# -----------------------------------------------------------------------------
+.venv/
+.venv311/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# -----------------------------------------------------------------------------
+# 2. Python Caches & Compiled Bytecode
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# -----------------------------------------------------------------------------
+# 3. Large Datasets (IPL.csv is 110MB - exceeds GitHub 100MB limit)
+# -----------------------------------------------------------------------------
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.parquet
+data/processed/*.csv
+!data/processed/.gitkeep
+
+# -----------------------------------------------------------------------------
+# 4. Trained Model Artifacts & Weights
+# -----------------------------------------------------------------------------
+models/*.joblib
+models/*.h5
+models/*.keras
+models/*.pkl
+models/*.npy
+models/*.json
+!models/.gitkeep
+
+# -----------------------------------------------------------------------------
+# 5. Logs & Temporary Output Files
+# -----------------------------------------------------------------------------
+logs/
+*.log
+streamlit_out.txt
+streamlit_err.txt
+*.out
+
+# -----------------------------------------------------------------------------
+# 6. Streamlit Secrets & Local Configs
+# -----------------------------------------------------------------------------
+.streamlit/secrets.toml
+
+# -----------------------------------------------------------------------------
+# 7. IDE & Tool Files
+# -----------------------------------------------------------------------------
+.claude/
+.gemini/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

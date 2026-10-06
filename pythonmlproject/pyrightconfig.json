@@ -1,0 +1,16 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "executionEnvironments": [
+    {
+      "root": "."
+    }
+  ],
+  "extraPaths": [
+    ".",
+    "d:/IPL project/.venv/Lib/site-packages",
+    "C:/Users/shivk/AppData/Local/Programs/Python/Python314/Lib/site-packages"
+  ],
+  "reportMissingImports": "none",
+  "reportMissingModuleSource": "none"
+}

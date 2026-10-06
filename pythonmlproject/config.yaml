@@ -1,0 +1,53 @@
+project:
+  name: "IPL Prediction Model"
+  version: "1.0.0"
+  seasons_range: [2008, 2026]
+
+paths:
+  raw_data: "data/raw/IPL.csv"
+  processed_dir: "data/processed"
+  features_parquet: "data/processed/features.parquet"
+  score_features_parquet: "data/processed/score_features.parquet"
+  elo_csv: "data/processed/elo_ratings.csv"
+  clusters_csv: "data/processed/clusters.csv"
+  models_dir: "models"
+  logs_dir: "logs"
+  shap_npy: "data/processed/shap_values.npy"
+
+elo:
+  k_factor: 32
+  initial_rating: 1500
+
+team_aliases:
+  "Delhi Daredevils": "Delhi Capitals"
+  "Kings XI Punjab": "Punjab Kings"
+  "Royal Challengers Bangalore": "Royal Challengers Bengaluru"
+  "Deccan Chargers": "Sunrisers Hyderabad"
+  "Rising Pune Supergiants": "Rising Pune Supergiant"
+
+models:
+  xgboost:
+    n_estimators: 300
+    max_depth: 6
+    learning_rate: 0.05
+    subsample: 0.8
+    random_state: 42
+  rf:
+    n_estimators: 200
+    max_depth: 10
+    min_samples_split: 5
+    random_state: 42
+  adaboost:
+    n_estimators: 100
+    learning_rate: 0.1
+  knn_ks: [3, 5, 7, 9, 11, 13, 15]
+  ridge_alphas: [0.01, 0.1, 1, 10, 100]
+  lasso_alphas: [0.001, 0.01, 0.1, 1, 10]
+
+ui:
+  primary_color: "#1F3864"
+  accent_color: "#FF6B00"
+  chart_height: 400
+
+cv_folds: 5
+random_seed: 42

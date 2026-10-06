@@ -1,0 +1,22 @@
+[tool.pyrefly]
+python-version = "3.12"
+import-roots = [".."]
+search-paths = [
+  "..",
+  "../.venv/Lib/site-packages"
+]
+disabled-rules = ["bad-index", "invalid-key", "bad-argument-type"]
+
+[tool.pyright]
+venvPath = ".."
+venv = ".venv"
+executionEnvironments = [
+  { "root": "." }
+]
+extraPaths = [
+    "..",
+    "../.venv/Lib/site-packages"
+]
+reportMissingImports = false
+reportMissingModuleSource = false
+reportGeneralTypeIssues = false
